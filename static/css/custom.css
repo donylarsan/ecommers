@@ -1,0 +1,97 @@
+body {
+
+    font-family: 'Gowun Batang', serif;
+    background-image: linear-gradient(red, yellow);
+}
+/***navbar***/
+.nav-item {
+    letter-spacing: .1em;
+    font-size:18px;
+}
+
+.dropdown-item{
+    letter-spacing: .1em;
+    font-size:15px;
+}
+
+.my_footer p {
+    padding-top20px;
+    font-size:20px;
+}
+.my_footer {
+    background-color: #4F9B72;
+    height:40px;
+}
+
+.my_row {
+    padding-top:65px;
+}
+
+.my_row .mx-auto {
+    color:blue;
+    font-size: 24px;
+}
+
+.title {
+    text-transform: uppercase;
+    color: red;
+    text-align: center;
+}
+
+.my_bottom_margin {
+    margin-bottom: 20px;
+}
+
+.card-body {
+    font-size:14 px;
+    text-transform:uppercase;
+    letter-spacing: .2em;
+}
+
+
+/***producthtml***/
+.prod_row {
+    padding-top:15px;
+    padding-bottom:20px;
+}
+
+.prod_row .mx_auto {
+    color:black;
+    font-size:14px;
+    text-decoration: none;
+}
+
+.prod_title {
+    background-color:#E4E4D9;
+    text-transform:uppercase;
+    letter-spacing: .1em;
+    padding-top:10px;
+    padding-bottom;10px;
+}
+
+.prod-text {
+padding-right: 20px;
+}
+
+/***cart page ***/
+.my_custom_table {
+min-width:400px;
+font-size:14px;
+}
+
+.my_custom_thead {
+    font-weight:normal;
+    text_transform:uppercase;
+    letter-spacing: .1 em;
+    background-color:#a1a5a7;
+
+}
+
+.custom_a {
+    text-decoration:none;
+    color:#868e96 !important;
+}
+
+.my_custom_button {
+    margin-top:5px;
+}

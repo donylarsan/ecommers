@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block metadescription %}
+       {{ product.description|truncatewords:100 }}
+{% endblock %}
+
+{% block title %}
+       {{ product.name }}-A-Z CHOICE
+{% endblock %}
+
+{% block content %}
+<div class="row prod_row" style="padding-top:15px;padding-bottom:20px;">
+    <div class="mx_auto" style="color:black;font-size:16px;text-decoration: none;">
+        <p><a href="{% url 'shopapp:allProdCat' %}">Home</a>|<a href="{{product.category.get_url}}">{{product.category}}|</a>{{product.name}}</p>
+    </div>
+    <div class="container">
+    <br>
+        <div class="row">
+        <div class="col-12 col-sm-12 cil-md-12 col-lg-6 text-center">
+            <div style="min-width:18rem;">
+                <div>
+                    <img src="{{product.image.url}}" width="100%" alt="{{product.name}}">
+                </div>
+            </div>
+        </div>
+             <div class="col-12 col-sm-12 col-md-12 col-lg-6">
+                    <h2 class="prod_title" style="background-color:#E4E4D9;text-transform:uppercase;letter-spacing: .1em;padding-top:10px;padding-bottom;15px;">{{product.name}}</h2>
+                    <p><b>{{product.price}} ₹/Kg</b></p>
+                 <p style="text-transform:uppercase;"><b>Product Description</b></p>
+                    <p class="text-justify prod-text" style="padding-right: 20px;"> {{product.description}}</p>
+                    {% if product.stock <= 0 %}
+                    <p class="text-justify prod-text"><b>Out of stock</b></p>
+                    {% else %}
+                    <a class="btn btn-secondary"  href="{% url 'cart:add_cart' product.id %}">Add to cart</a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

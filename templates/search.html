@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block metadescription %}
+    we have variety of products
+{% endblock %}
+{% block title %}
+    Search
+{% endblock %}
+{% block content %}
+<div>
+    <p class="text-center my_search" style="padding-top:20px">You have searched for:<b>{{query}}</b></p>
+</div>
+<div class="container">
+    {% if products or category %}
+        <div class="row mx_auto">
+            
+            {% for product in products %}
+                <div class="my_bottom_margin col-sm-4 col-md-12 col_9 col-lg-4" style="margin-bottom: 20px;">
+                    <div class="card shadow text-center" style="width: 18rem; height:20rem;">
+                        <a href="{{product.get_url }}"> <img class="card-img-top" src="{{product.image.url}}" alt="Card image cap"></a>
+
+                        <div class="card-body">
+
+                            <h4>{{product.name}}</h4>
+                            <p>₹ {{product.price}}</p>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+            
+            {% for categori in category %}<hr>
+                <h3>'{{query}}' fount in <a href="{{catogeri.get_url}}" style="text-decoration: none;">{{ categori }}</a></h3>
+                <div class="row mx-auto">
+                    {% for pr in product_cat %}
+                        {% if pr.catogery == catogeri  %}
+                            <div class="my-bottom-margin col-9 col-sm-12  col-md-3 col-lg-3" style="margin-bottom: 30px;">
+                                <div class="card shadow text-center" style="min-width: 14rem; height: 15rem;"> 
+                                    <a href="{{pr.get_url}}">
+                                        
+                                        <img class="card-img-top my-image" src="{{pr.image.url}}" alt="{{product.name}}">
+                                    </a>
+                                
+                                    <div class="card-body">
+                                        <h4 class="text-center">{{pr.name}}</h4>
+                                        <p class="text-center">{{pr.price}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            {% endfor %}
+        </div>
+    {% else %}
+    <div class="mx-auto">
+        <p class="text-center my_search">No result found</p>
+    </div>
+    {% endif %}
+</div>
+{% endblock %}

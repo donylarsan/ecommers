@@ -1,0 +1,4 @@
+D:\Dony\django\newenv\Scripts\activate
+
+
+python manage.py runserver
